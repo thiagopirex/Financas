@@ -48,4 +48,4 @@ production:
   database: Financas_production
   pool: 5
   username: Financas
-  password:
+  password: postgres
