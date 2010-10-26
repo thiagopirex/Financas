@@ -1,2 +1,22 @@
-<h1>UserSessions#new</h1>
-<p>Find me in app/views/user_sessions/new.html.erb</p>
+ <br />
+ <br />
+ 
+ 
+ <div align="center"> 
+ <%= form_for @user_session, :url => {:action => "create"} do |f| %>
+    <%= f.error_messages %>
+    <div>
+      <%= f.label :login %>:
+      <%= f.text_field :login %><br />
+    </div>
+    <div>
+      <%= f.label :password %>:
+      <%= f.password_field :password %><br />
+    </div>
+    <div>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+    <%= f.submit "Login"%>
+  <% end %>
+</div>
