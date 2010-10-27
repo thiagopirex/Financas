@@ -1,7 +1,7 @@
 ﻿<%= form_for(@gasto) do |f| %>
   <% if @gasto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@gasto.errors.count, "error") %> prohibited this gasto from being saved:</h2>
+      <h2><%= pluralize(@gasto.errors.count, "erro") %> impede que este gasto seja salvo:</h2>
 
       <ul>
       <% @gasto.errors.full_messages.each do |msg| %>
