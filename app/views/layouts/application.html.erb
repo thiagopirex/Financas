@@ -8,7 +8,16 @@
 </head>
 <body>
 <h1 align="center">Gerenciador de Finanças Pessoais</h1>
-<%= yield %>
+
+<br/>
+<a href=".">Página inicial</a>
+<%= link_to 'Meus Gastos', gastos_path %>
+<%= link_to 'Sair', :controller => 'user_sessions', :action => 'destroy'%>
+<br/>
+
+<div align="center">
+  <%= yield %>
+</div>
 
 </body>
 </html>

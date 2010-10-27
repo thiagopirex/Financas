@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101025233310) do
+ActiveRecord::Schema.define(:version => 20101027160723) do
+
+  create_table "gastos", :force => true do |t|
+    t.string   "descricao"
+    t.string   "valor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                             :null => false

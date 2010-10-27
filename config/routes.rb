@@ -1,10 +1,11 @@
-Financas::Application.routes.draw do
+﻿Financas::Application.routes.draw do
   get "home/index"
-
   get "user_sessions/new"
 
   root :to => "home#index" 
+  
   resources :user_sessions
+  resources :gastos
 
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout

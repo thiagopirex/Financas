@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+﻿class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user_session, :current_user
@@ -43,5 +43,8 @@ class ApplicationController < ActionController::Base
     def redirect_back_or_default(default)
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
+    end
+    
+    def login
     end
 end
