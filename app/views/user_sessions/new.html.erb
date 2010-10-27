@@ -1,6 +1,9 @@
 ﻿ <br />
  
- <div align="center"> 
+ <div align="center">
+ <label>Ainda não tem cadastro, clique <a href="#">aqui</a></label>
+ <br/>
+ <br/>
  <%= form_for @user_session, :url => {:action => "create"} do |f| %>
     <%= f.error_messages %>
     <div>

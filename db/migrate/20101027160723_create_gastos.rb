@@ -1,8 +1,9 @@
-class CreateGastos < ActiveRecord::Migration
+﻿class CreateGastos < ActiveRecord::Migration
   def self.up
     create_table :gastos do |t|
       t.string :descricao
-      t.string :valor
+      t.float :valor
+      t.date :data
 
       t.timestamps
     end

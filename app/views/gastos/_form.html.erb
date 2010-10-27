@@ -15,6 +15,15 @@
     <table>
       <tr>
         <td>
+          <%= f.label :data %>
+        </td>
+        <td>
+          <%= f.date_select :data, :order => [:day, :month, :year] %>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
           <%= f.label :descrição %>
         </td>
         <td>

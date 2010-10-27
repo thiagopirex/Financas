@@ -1,2 +1,3 @@
-class Gasto < ActiveRecord::Base
+﻿class Gasto < ActiveRecord::Base
+
 end

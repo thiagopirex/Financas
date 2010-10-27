@@ -14,7 +14,8 @@ ActiveRecord::Schema.define(:version => 20101027160723) do
 
   create_table "gastos", :force => true do |t|
     t.string   "descricao"
-    t.string   "valor"
+    t.float    "valor"
+    t.date     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

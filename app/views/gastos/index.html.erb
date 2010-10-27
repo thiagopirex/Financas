@@ -5,6 +5,7 @@ Nenhum gasto encontrado.
 <% else %>
   <table>
     <tr>
+      <th>Data</th>
       <th>Descrição</th>
       <th>Valor</th>
       <th colspan="3">Ações</th>
@@ -12,6 +13,7 @@ Nenhum gasto encontrado.
     
     <% @gastos.each do |gasto| %>
     <tr>
+      <td><%= gasto.data %></td>
       <td><%= gasto.descricao %></td>
       <td><%= gasto.valor %></td>
       <td><%= link_to 'Visualizar', gasto %></td>
