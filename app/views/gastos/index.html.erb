@@ -1,0 +1,25 @@
+﻿<% if @gastos.empty? %>
+<br/>
+Nenhum gasto encontrado.
+<br/>
+<% else %>
+  <table>
+    <tr>
+      <th>Descrição</th>
+      <th>Valor</th>
+      <th colspan="3">Ações</th>
+    </tr>
+    
+    <% @gastos.each do |gasto| %>
+    <tr>
+      <td><%= gasto.descricao %></td>
+      <td><%= gasto.valor %></td>
+      <td><%= link_to 'Visualizar', gasto %></td>
+      <td><%= link_to 'Editar', edit_gasto_path(gasto) %></td>
+      <td><%= link_to 'Excluir', gasto, :confirm => 'Tem certeza que deseja excluir este gasto?', :method => :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+<br />
+<%= link_to 'Novo Gasto', new_gasto_path %>
