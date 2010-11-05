@@ -1,6 +1,5 @@
 ﻿Financas::Application.routes.draw do
   get "home/index"
-  get "user_sessions/new"
 
   root :to => "home#index" 
   
