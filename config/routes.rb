@@ -1,7 +1,7 @@
 ﻿Financas::Application.routes.draw do
   root :to => "home#index" 
   
-  resources :gastos, :user_sessions
+  resources :gastos, :users, :user_sessions
 
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
