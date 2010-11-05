@@ -1,45 +1,44 @@
 ﻿ <br />
  
  <div align="center">
- <label>Ainda não tem cadastro, clique <a href="#">aqui</a></label>
- <br/>
- <br/>
+ <br />
  <%= form_for @user_session, :url => {:action => "create"} do |f| %>
     <%= f.error_messages %>
-    <div>
-    	<table>
-    		<tr>
-    			<td>
-    				<%= f.label :login %>:
-    			</td>
-    			<td>
-    				<%= f.text_field :login %>
-    			</td>
-    		</tr>
-    		
-    		<tr>
-    			<td>
-    				<%= f.label :password %>:
-    			</td>
-    			<td>
-    				<%= f.password_field :password %>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td colspan="2">
-    			  <div align="right">
-    					<%= f.check_box :remember_me %>
-      				<%= f.label :remember_me %>
-      			</div>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td colspan="2">
-    				<div align="center">
-    					<%= f.submit "Login"%>
-    				</div>
-    			</td>
-    		</tr>
-    </div>
+  	<table>
+  		<tr>
+  			<td>
+  				<%= f.label :login %>:
+  			</td>
+  			<td>
+  				<%= f.text_field :login %>
+  			</td>
+  		</tr>
+  		
+  		<tr>
+  			<td>
+  				<%= f.label :password %>:
+  			</td>
+  			<td>
+  				<%= f.password_field :password %>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td colspan="2">
+  			  <div align="right">
+  					<%= f.check_box :remember_me %>
+    				<%= f.label :remember_me %>
+    			</div>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td colspan="2">
+  				<div align="center">
+  					<%= f.submit "Login"%>
+  				</div>
+  			</td>
+  		</tr>
+    </table>
+    <br />
+    <label>Ainda não tem cadastro, clique <a href="#">aqui</a></label>
   <% end %>
 </div>
