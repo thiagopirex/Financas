@@ -20,7 +20,6 @@
       logger.debug "ApplicationController::require_user"
       unless current_user
         store_location
-        flash[:notice] = "Você precisa está logado para acessar esta página"
         redirect_to new_user_session_url
         return false
       end
@@ -30,21 +29,19 @@
       logger.debug "ApplicationController::require_no_user"
       if current_user
         store_location
-        flash[:notice] = "You must be logged out to access this page"
         redirect_to account_url
         return false
       end
     end
 
     def store_location
+      logger.debug "ApplicationController::store_location"
       session[:return_to] = request.request_uri
     end
 
     def redirect_back_or_default(default)
+      logger.debug "ApplicationController::redirect_back_or_default"
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
-    end
-    
-    def login
     end
 end
