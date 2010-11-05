@@ -9,7 +9,7 @@
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Login successful!"
+      flash[:notice] = "Login realizado com sucesso!"
       redirect_back_or_default login
     else
       render :action => :new
@@ -18,7 +18,8 @@
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = "Logout successful!"
+    flash[:notice] = "Logout realizado com sucesso!"
+    @user_session = nil
     redirect_back_or_default new_user_session_url
   end
 end
