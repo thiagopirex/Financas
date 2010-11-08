@@ -62,7 +62,7 @@
 
     respond_to do |format|
       if @gasto.update_attributes(params[:gasto])
-        format.html { redirect_to(@gasto, :notice => 'Atualização do gasto feita com sucesso.') }
+        format.html { redirect_to(@gasto, :notice => 'Atualização de gasto feita com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
