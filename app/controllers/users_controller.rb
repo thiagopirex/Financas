@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(:root, :notice => 'Inclusão de usuário feita com sucesso.') }
+        format.html { redirect_to(:root, :notice => 'Inclusao de usuario feita com sucesso.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'Atualização de usuário feita com sucesso.') }
+        format.html { redirect_to(@user, :notice => 'Atualizacao de usuario feita com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
