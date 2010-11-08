@@ -7,17 +7,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<h1 align="center">Gerenciador de Finanças Pessoais</h1>
-
-<br/>
-<%= link_to 'Página inicial', :root %>
-<%= link_to 'Meus Gastos', gastos_path %>
-<%= link_to 'Sair', :logout %>
-<br/>
-
-<div align="center">
-  <%= yield %>
-</div>
-
+  <h1 align="center">Gerenciador de Finanças Pessoais</h1>
+  <br />
+  <%= link_to 'Página inicial', :root %>
+  <%= link_to 'Meus Gastos', gastos_path %>
+  <%= link_to 'Sair', :logout %>
+  <br />
+  <div align="center">
+    <%= yield %>
+  </div>
 </body>
 </html>

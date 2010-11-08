@@ -7,4 +7,13 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
+  
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_back_or_default :root
+    else
+      render :action => :new
+    end
+  end
 end
