@@ -1,4 +1,4 @@
-﻿class GastosController < ApplicationController
+class GastosController < ApplicationController
   before_filter :require_user
 
   # GET /gastos
