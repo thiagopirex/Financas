@@ -1,4 +1,4 @@
-﻿Financas::Application.routes.draw do
+Financas::Application.routes.draw do
   root :to => "home#index" 
   
   resources :gastos, :users, :user_sessions
