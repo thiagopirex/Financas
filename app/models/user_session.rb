@@ -1,4 +1,5 @@
-﻿class UserSession < Authlogic::Session::Base
+#teste heroku - á
+class UserSession < Authlogic::Session::Base
 
 def to_key
   new_record? ? nil : [
