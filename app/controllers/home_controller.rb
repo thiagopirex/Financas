@@ -1,3 +1,4 @@
+#teste encoding - á
 class HomeController < ApplicationController
   before_filter :require_user
 
