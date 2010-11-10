@@ -46,7 +46,7 @@ class GastosController < ApplicationController
 
     respond_to do |format|
       if @gasto.save
-        format.html { redirect_to(@gasto, :notice => 'Inclusão de gasto feita com sucesso.') }
+        format.html { redirect_to(@gasto, :notice => 'Inclusao de gasto feita com sucesso.') }
         format.xml  { render :xml => @gasto, :status => :created, :location => @gasto }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class GastosController < ApplicationController
 
     respond_to do |format|
       if @gasto.update_attributes(params[:gasto])
-        format.html { redirect_to(@gasto, :notice => 'Atualização de gasto feita com sucesso.') }
+        format.html { redirect_to(@gasto, :notice => 'Atualizacao de gasto feita com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
