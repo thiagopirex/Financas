@@ -4,7 +4,7 @@ class GastosController < ApplicationController
   # GET /gastos
   # GET /gastos.xml
   def index
-    @gastos = Gasto.all
+    @gastos = Gasto.find_by_user(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,10 +16,14 @@ class GastosController < ApplicationController
   # GET /gastos/1.xml
   def show
     @gasto = Gasto.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @gasto }
+    
+    if @gasto.user_id == current_user.id
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @gasto }
+      end
+    else
+      redirect_to :gastos
     end
   end
 
@@ -43,6 +47,9 @@ class GastosController < ApplicationController
   # POST /gastos.xml
   def create
     @gasto = Gasto.new(params[:gasto])
+
+    #associa o gasto ao usuario logado    
+    @gasto.user_id = current_user.id
 
     respond_to do |format|
       if @gasto.save
