@@ -4,7 +4,6 @@
       t.string :descricao
       t.float :valor
       t.date :data
-
       t.timestamps
     end
   end
