@@ -1,4 +1,5 @@
 ﻿#teste encoding - á
+
 class AddUserToGasto < ActiveRecord::Migration
   def self.up
      #Remove all gastos
