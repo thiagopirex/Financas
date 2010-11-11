@@ -1,5 +1,3 @@
-﻿#teste encoding - á
-
 class CreateGastos < ActiveRecord::Migration
   def self.up
     create_table :gastos do |t|
