@@ -19,7 +19,6 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     @user_session = nil
-    flash[:notice] = 'Logout realizado com sucesso.'
     redirect_to :new_user_session
   end
 end
