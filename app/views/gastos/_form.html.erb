@@ -1,8 +1,11 @@
 ﻿<%= form_for(@gasto) do |f| %>
   <% if @gasto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@gasto.errors.count, "erro") %> impede que este gasto seja salvo:</h2>
-
+      <% if @gasto.errors.count == 1 %>
+        <h2><%= pluralize(@gasto.errors.count, "erro") %> impede que este gasto seja salvo:</h2>
+      <% else %>
+        <h2><%= pluralize(@gasto.errors.count, "erro") %> impedem que este gasto seja salvo:</h2>
+      <% end %>
       <ul>
       <% @gasto.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -18,13 +21,15 @@
           <%= f.label :data %>
         </td>
         <td>
-          <%= f.date_select :data, :order => [:day, :month, :year] %>
+          <%= f.date_select :data, :order => [:day, :month, :year] , 
+            :use_month_names => ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+                                 "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"] %>
         </td>
       </tr>
     
       <tr>
         <td>
-          <%= f.label :descrição %>
+          <%= f.label :descricao %>
         </td>
         <td>
           <%= f.text_field :descricao %>

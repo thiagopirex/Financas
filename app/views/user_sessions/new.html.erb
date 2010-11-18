@@ -39,20 +39,22 @@
   		</tr>
     </table>
     <br />
-    <label>Ainda não tem cadastro, clique <%= link_to 'aqui', :new_user %></label>
+    <label>Ainda não tem cadastro? <%= link_to 'Clique aqui', :new_user %></label>
   <% end %>
 </div>
 
 <div>
-  <label>Saudades da vuvuzela? <br/> <%= link_to_function "Ouvir", 
-        "Element.show('vuvuzela');"
-        %> /
-        <%= link_to_function "Cansei", 
-        "Element.hide('vuvuzela');"
-        %> </label>
-  
-  <div id="vuvuzela" style="display:none">
-    <embed src="http://s3.amazonaws.com/vuvu/1.swf">
-  </div>
+  <label>Saudades da vuvuzela? <br/>
+    <div id="botaoOuvir">
+      <%= button_to_function "Ouvir", "Element.show('vuvuzela'); Element.hide('botaoOuvir'); Element.show('botaoCansei');" %>
+    </div>
+    <div id="botaoCansei" style="display:none">
+      <%= button_to_function "Cansei", "Element.hide('vuvuzela'); Element.hide('botaoCansei'); Element.show('botaoOuvir');" %>
+    </div>
+    <div id="vuvuzela" style="display:none">
+      <img src="/images/vuvuzela.jpeg" />
+      <embed src="http://s3.amazonaws.com/vuvu/1.swf">
+    </div>
+  </label> 
 
 </div>
