@@ -2,12 +2,19 @@ require 'test_helper'
 
 class GastoTest < ActiveSupport::TestCase
 
+  
+
   test "should create gasto" do
-    gasto = Gasto.create(:descricao => "Combustivel da viagem", 
-                         :valor => "100",
-                         :data => Time.new, 
-                         :user_id => 1)
-    assert gasto.valid? 
+    
+    assert_difference 'Gasto.count' do
+      
+      Gasto.create(:descricao => "Combustivel da viagem", 
+                   :valor => "100",
+                   :data => Time.new, 
+                   :user => users(:one))
+                         
+    end
+    
   end
   
   test "should require descricao" do
@@ -19,7 +26,7 @@ class GastoTest < ActiveSupport::TestCase
   end
   
   test "should require valor" do
-    gasto = Gasto.create(:descricao => "compra roupas", 
+    gasto = Gasto.new(:descricao => "compra roupas", 
                          :valor => nil,
                          :data => Time.new,
                          :user_id => 1)
@@ -27,19 +34,25 @@ class GastoTest < ActiveSupport::TestCase
   end
   
   test "should require valor and descricao" do
-    gasto = Gasto.create(:descricao => nil, 
+    gasto = Gasto.new(:descricao => nil, 
                          :valor => nil,
                          :data => Time.new,
                          :user_id => 1)
     assert !gasto.valid?
   end
   
-  test "should not instert gasto user null" do
-     gasto = Gasto.create(:descricao => "descricao", 
+  test "should not insert gasto without user" do
+     gasto = Gasto.new(:descricao => "descricao", 
                          :valor => 10,
                          :data => Time.new,
-                         :user_id => nil)
-    assert !gasto.valid?, "Gasto foi incluido sem referencia ao usuario"
+                         :user => nil)
+                         
+     assert_raise RuntimeError do
+       gasto.save
+       raise 'Boom!!!'
+     end
+
+     #assert !gasto.valid?, ""
   end
   
 end
