@@ -49,10 +49,7 @@ class GastoTest < ActiveSupport::TestCase
                          
      assert_raise RuntimeError do
        gasto.save
-       raise 'Boom!!!'
+       raise 'Gasto foi incluido sem estar relacionado a um usuario'
      end
-
-     #assert !gasto.valid?, ""
   end
-  
 end
