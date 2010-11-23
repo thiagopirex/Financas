@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101110144206) do
+ActiveRecord::Schema.define(:version => 20101122234106) do
+
+  create_table "ganhos", :force => true do |t|
+    t.string   "descricao"
+    t.float    "valor"
+    t.date     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gastos", :force => true do |t|
     t.string   "descricao"

@@ -1,0 +1,2 @@
+module GanhosHelper
+end
