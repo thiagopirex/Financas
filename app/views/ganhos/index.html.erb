@@ -1,4 +1,8 @@
-
+﻿<% if @ganhos.empty? %>
+<br/>
+Nenhum ganho encontrado.
+<br/>
+<% else %>
 
 <table>
   <tr>
@@ -19,9 +23,9 @@
     <td><%= link_to 'Editar', edit_ganho_path(ganho) %></td>
     <td><%= link_to 'Excluir', ganho, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <% end %>
+ </table>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'Novo Ganho', new_ganho_path %>

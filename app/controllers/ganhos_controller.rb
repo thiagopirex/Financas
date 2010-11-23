@@ -7,7 +7,7 @@ class GanhosController < ApplicationController
   
   
   def index
-    @ganhos = Ganho.all
+    @ganhos = Ganho.find_by_user(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +47,8 @@ class GanhosController < ApplicationController
   def create
     @ganho = Ganho.new(params[:ganho])
 
+    #associa o ganho ao usuario logado    
+    @ganho.user_id = current_user.id
     respond_to do |format|
       if @ganho.save
         format.html { redirect_to(@ganho, :notice => 'Ganho gravado com sucesso.') }

@@ -21,9 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :data %><br />
-    <%= f.date_select :data %>
+    <%= f.date_select :data, :order => [:day, :month, :year] , 
+            :use_month_names => ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+                                 "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar" %>
   </div>
 <% end %>
