@@ -27,7 +27,7 @@ div.field, div.actions {
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: inline-table;
+  display: table;
 }
 
 #error_explanation {

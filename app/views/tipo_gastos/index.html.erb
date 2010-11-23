@@ -1,0 +1,24 @@
+﻿<% if @tipo_gastos.empty? %>
+<br/>
+Nenhum tipo de gasto encontrado.
+<br/>
+<% else %>
+<table>
+  <tr>
+    <th>Descrição</th>
+    <th colspan='3'>Ações</th>
+  </tr>
+
+<% @tipo_gastos.each do |tipo_gasto| %>
+  <tr>
+    <td><%= tipo_gasto.descricao %></td>
+    <td><%= link_to 'Visualizar', tipo_gasto %></td>
+    <td><%= link_to 'Editar', edit_tipo_gasto_path(tipo_gasto) %></td>
+    <td><%= link_to 'Excluir', tipo_gasto, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'Novo Tipo de gasto', new_tipo_gasto_path %>
