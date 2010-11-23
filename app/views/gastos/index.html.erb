@@ -20,7 +20,16 @@ Nenhum gasto encontrado.
       <td><%= link_to 'Editar', edit_gasto_path(gasto) %></td>
       <td><%= link_to 'Excluir', gasto, :confirm => 'Tem certeza que deseja excluir este gasto?', :method => :delete %></td>
     </tr>
+    <td><% @Total += gasto.valor %></td>
+       
     <% end %>
+    <br/>
+    <tr>
+      <td></td>
+      <td><label>Total</label></td>
+      <td><%= @Total %></td>
+    </tr>
+    
   </table>
 <% end %>
 <br />
