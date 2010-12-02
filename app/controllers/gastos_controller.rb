@@ -4,7 +4,7 @@ class GastosController < ApplicationController
   # GET /gastos
   # GET /gastos.xml
   def index
-    @Total = 0
+    @total = 0
     @gastos = Gasto.find_by_user(current_user)
 
     respond_to do |format|

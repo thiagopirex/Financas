@@ -12,24 +12,22 @@ Nenhum gasto encontrado.
     </tr>
     
     <% @gastos.each do |gasto| %>
-    <tr>
-      <td><%= gasto.data %></td>
-      <td><%= gasto.descricao %></td>
-      <td><%= gasto.valor %></td>
-      <td><%= link_to 'Visualizar', gasto %></td>
-      <td><%= link_to 'Editar', edit_gasto_path(gasto) %></td>
-      <td><%= link_to 'Excluir', gasto, :confirm => 'Tem certeza que deseja excluir este gasto?', :method => :delete %></td>
-    </tr>
-    <td><% @Total += gasto.valor %></td>
-       
+      <tr>
+        <td><%= gasto.data %></td>
+        <td><%= gasto.descricao %></td>
+        <td><%= gasto.valor %></td>
+        <td><%= link_to 'Visualizar', gasto %></td>
+        <td><%= link_to 'Editar', edit_gasto_path(gasto) %></td>
+        <td><%= link_to 'Excluir', gasto, :confirm => 'Tem certeza que deseja excluir este gasto?', :method => :delete %></td>
+      </tr>
+      <% @total += gasto.valor %>
     <% end %>
     <br/>
     <tr>
-      <td></td>
-      <td><label>Total</label></td>
-      <td><%= @Total %></td>
+      <td colspan="2" align="right"><label>Total</label></td>
+      <td><%=@total%></td>
+      <td colspan="3">&nbsp;</td>
     </tr>
-    
   </table>
 <% end %>
 <br />
